@@ -13,7 +13,7 @@ assets:
     data:
       url: 'https://raw.githubusercontent.com/sgvandijk/foxglove_studio_balena_block/main/logo-icon-round.png'
 data:
-  defaultDeviceType: raspberrypi4-64
+  defaultDeviceType: generic-amd64
   supportedDeviceTypes:
     - generic
     - generic-amd64
