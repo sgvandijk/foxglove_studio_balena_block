@@ -1,7 +1,7 @@
 name: Foxglove Studio
 description: >-
   Use interactive visualizations in customizable layouts to quickly understand what your robot is doing.
-version: 1.56.0
+version: 1.72.0
 type: sw.block
 assets:
   repository:
