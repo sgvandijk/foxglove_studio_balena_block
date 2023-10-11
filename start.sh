@@ -30,7 +30,7 @@ environment="${environment::-1}"
 # * Run `startx.sh` in an X session with `startx`
 # * Start the shell as a login shell with an environment similar to a real login
 # * Run as the `foxglove` user
-su \
+exec su \
     --whitelist-environment=$environment \
     --command="export DISPLAY=:$DISPLAY_NUM && startx /startx.sh" \
     --login \
