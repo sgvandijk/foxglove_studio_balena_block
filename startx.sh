@@ -8,7 +8,7 @@ if [[ -z "$WINDOW_SIZE" ]]
 then
     # detect the window size from the framebuffer file
     echo "Detecting window size from framebuffer"
-    export WINDOW_SIZE=$( cat /sys/class/graphics/fb0/virtual_size )
+    export WINDOW_SIZE=$( xrandr | awk '/\*/{ print $1 }' | tr 'x' ' ' )
     echo "Window size detected as $WINDOW_SIZE"
 else
     echo "Window size set by environment variable to $WINDOW_SIZE"
