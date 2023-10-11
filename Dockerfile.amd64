@@ -12,7 +12,8 @@ RUN install_packages \
     xserver-xorg-video-fbdev \
     xserver-xorg xinit \
     xinput \
-    xterm
+    xterm \
+    xdotool
 
 ENV UDEV=1
 
@@ -27,11 +28,11 @@ RUN usermod -a -G audio,video,tty foxglove
 COPY startx.sh /startx.sh
 COPY start.sh /start.sh
 
-CMD ["bash", "/start.sh"]
-
 # 2. App setup
 RUN wget -nv https://github.com/foxglove/studio/releases/download/v${FOXGLOVE_STUDIO_VERSION}/foxglove-studio-${FOXGLOVE_STUDIO_VERSION}-linux-amd64.deb \
     && apt update \
     && apt install -y ./foxglove-studio-*.deb libasound2 \
     && rm foxglove-studio-*.deb \
     && rm -rf /var/lib/apt/lists/*
+
+CMD ["bash", "/start.sh"]

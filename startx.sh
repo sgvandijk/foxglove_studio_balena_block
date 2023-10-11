@@ -17,4 +17,18 @@ fi
 # stop the screen blanking
 xset s off -dpms
 
-foxglove-studio
+# Start Foxglove Studio in the backgroung
+foxglove-studio &
+PID=$!
+
+# Wait a bit until Foxglove Studio is running properly
+sleep 5
+
+# Move and set window size to max available size
+arr=($WINDOW_SIZE)
+xdotool search --name "Foxglove Studio" windowmove 0 0 windowsize ${arr[0]} ${arr[1]}
+
+# Wait until Foxglove Studio stops/dies
+wait $PID
+
+echo Foxglove Studio exited
