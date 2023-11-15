@@ -1,6 +1,6 @@
 FROM balenalib/%%BALENA_ARCH%%:bullseye-run
 
-ARG FOXGLOVE_STUDIO_VERSION=1.72.0
+ARG FOXGLOVE_STUDIO_VERSION=1.76.0
 
 RUN install_packages wget
 
